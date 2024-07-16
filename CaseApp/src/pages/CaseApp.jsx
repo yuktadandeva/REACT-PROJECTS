@@ -11,7 +11,7 @@ export const CaseApp = () => {
 
     const handleEvent =(e)=>{
      setInputVal(e.target.value);
-     console.log(e.target.value);
+  
     }
 
     const upperCase = ()=>{
@@ -24,13 +24,8 @@ export const CaseApp = () => {
     }
 
     const properCase = ()=>{
-      setInputVal (inputValue[0].toUpperCase());
-
-        const a=' ';
-        const i =  inputValue.indexOf(a);
-      setInputVal( inputValue[i].toUpperCase());
-       
-     
+      setInputVal( inputValue.split(' ').map((word)=>word.charAt(0).toUpperCase()+ word.slice(1).toLowerCase()).join(' '))
+  
     }
 
   return (
